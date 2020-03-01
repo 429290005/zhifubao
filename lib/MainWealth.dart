@@ -1,0 +1,17 @@
+// 财富
+
+import 'package:flutter/material.dart';
+
+class MainWealth extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => MainWealthState();
+}
+
+class MainWealthState extends State<MainWealth> {
+  @override
+  Widget build(BuildContext context) {
+    return new Center(
+      child: new Text("财富"),
+    );
+  }
+}

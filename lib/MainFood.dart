@@ -1,0 +1,18 @@
+// 口碑
+
+import 'package:flutter/material.dart';
+
+class MainFood extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => MainFoodState();
+}
+
+class MainFoodState extends State<MainFood> {
+  @override
+  Widget build(BuildContext context) {
+    return new Center(
+      child: new Text("口碑"),
+    );
+  }
+}
+
