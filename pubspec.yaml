@@ -7,7 +7,8 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
-  flutter_swiper: ^1.1.5
+  flutter_swiper: ^1.1.6
+
   flutter:
     sdk: flutter
 
@@ -21,3 +22,39 @@ flutter:
 
   uses-material-design: true
 
+  assets:
+    - images/swiper1.jpg
+    - images/swiper2.jpg
+    - images/swiper3.jpg
+    - images/choujiang.png
+    - images/choujiang2.png
+    - images/ditu.png
+    - images/xinwen.png
+    - images/shucai.png
+    - images/yiyonxiang.png
+    - images/huabei.png
+    - images/shangjia.png
+    - images/tixing.png
+    - images/wangshandai.png
+    - images/mayi.png
+    - images/xianghu.png
+    - images/xingyundou.png
+    - images/daren.png
+    - images/meinv.png
+
+    - images/huiyuan.png
+    - images/shangjia2.png
+    - images/zhangdan.png
+    - images/zongzichan.png
+    - images/yue.png
+    - images/yueb.png
+    - images/huabei2.png
+    - images/yulibao.png
+    - images/yinhangka.png
+    - images/zhimaxinyon.png
+    - images/baoxian.png
+    - images/xhhy.png
+    - images/jiebei.png
+    - images/wsyh.png
+    - images/gongyi.png
+    - images/kefu.png
