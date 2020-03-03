@@ -1,6 +1,7 @@
 // 口碑
 
 import 'package:flutter/material.dart';
+import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
 class MainFood extends StatefulWidget {
   @override
@@ -10,9 +11,12 @@ class MainFood extends StatefulWidget {
 class MainFoodState extends State<MainFood> {
   @override
   Widget build(BuildContext context) {
-    return new Center(
-      child: new Text("口碑"),
+    return new MaterialApp(
+      routes: {
+        "/": (_) => new WebviewScaffold(
+              url: "https://hz.meituan.com/",
+            ),
+      },
     );
   }
 }
-

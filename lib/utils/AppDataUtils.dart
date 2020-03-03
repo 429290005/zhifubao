@@ -75,6 +75,16 @@ class AppDataUtils {
     return items;
   }
 
+  // 财富轮播图
+  static List<Images> getSwiper2() {
+    List<Images> items = [
+      new Images("images/caifu1.jpg"),
+      new Images("images/caifu2.jpg"),
+      new Images("images/caifu3.jpg"),
+    ];
+    return items;
+  }
+
   // 朋友 - 消息列表
   static List getFriend() {
     List<Friend> items = [

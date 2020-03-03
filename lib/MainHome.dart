@@ -17,102 +17,108 @@ class MainHomeState extends State<MainHome> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return new SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            color: Colors.blue,
-            padding: EdgeInsets.all(8),
-            child: Container(
-              height: 40,
-              margin: EdgeInsets.only(top: 24),
-              child: getRowSearch(),
-            ),
+    return new Column(
+      children: <Widget>[
+        Container(
+          color: Colors.blue,
+          padding: EdgeInsets.all(8),
+          child: Container(
+            height: 40,
+            margin: EdgeInsets.only(top: 24),
+            child: getRowSearch(),
           ),
-          Container(
-            color: Colors.blue,
-            padding: EdgeInsets.only(top: 8, bottom: 8),
-            child: getRowButIcon(),
+        ),
+        Expanded(
+            child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                color: Colors.blue,
+                padding: EdgeInsets.only(top: 8, bottom: 8),
+                child: getRowButIcon(),
+              ),
+              Container(
+                padding: EdgeInsets.only(top: 8),
+                child: getGridView(),
+              ),
+              Container(
+                color: Color.fromARGB(255, 228, 228, 228),
+                padding: EdgeInsets.all(4),
+              ),
+              Container(
+                padding: EdgeInsets.all(16),
+                child: getRowMessage(),
+              ),
+              Container(
+                color: Color.fromARGB(255, 228, 228, 228),
+                padding: EdgeInsets.all(4),
+              ),
+              Container(
+                width: size.width,
+                height: 140,
+                child: getSwiper(size.width, 140),
+              ),
+              Container(
+                padding: EdgeInsets.all(8),
+                child: getTextTitle("惠支付"),
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 8, right: 8, bottom: 8),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                        child: getDecoratedBox(
+                            "天天抽奖", "今日限量免费抽", AppDataUtils.choujiang)),
+                    Expanded(
+                        child: getDecoratedBox(
+                            "领家庭积分", "油醋纸巾兑不停", AppDataUtils.choujiang2)),
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(8),
+                child: getTextTitle("抗击新冠肺炎"),
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 8, right: 8),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                        child: getDecoratedBox(
+                            "实时数据", "疫情动态追踪", AppDataUtils.ditu)),
+                    Expanded(
+                        child: getDecoratedBox(
+                            "滚动资讯", "实时权威发布", AppDataUtils.xinwen)),
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 8, right: 8),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                        child: getDecoratedBox(
+                            "宅家也能买菜", "新鲜蔬菜送上门", AppDataUtils.shucai)),
+                    Expanded(
+                        child: getDecoratedBox(
+                            "消毒清洁用品", "除菌消毒更健康", AppDataUtils.yiyonxiang)),
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(16),
+                width: size.width,
+                child: Center(
+                  child: Text(
+                      "-------------------- 我是有底线的 --------------------",
+                      style: TextStyle(fontSize: 10)),
+                ),
+              ),
+            ],
           ),
-          Container(
-            padding: EdgeInsets.only(top: 8),
-            child: getGridView(),
-          ),
-          Container(
-            color: Color.fromARGB(255, 228, 228, 228),
-            padding: EdgeInsets.all(4),
-          ),
-          Container(
-            padding: EdgeInsets.all(16),
-            child: getRowMessage(),
-          ),
-          Container(
-            color: Color.fromARGB(255, 228, 228, 228),
-            padding: EdgeInsets.all(4),
-          ),
-          Container(
-            width: size.width,
-            height: 140,
-            child: getSwiper(size.width, 140),
-          ),
-          Container(
-            padding: EdgeInsets.all(8),
-            child: getTextTitle("惠支付"),
-          ),
-          Container(
-            padding: EdgeInsets.only(left: 8, right: 8, bottom: 8),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                    child: getDecoratedBox(
-                        "天天抽奖", "今日限量免费抽", AppDataUtils.choujiang)),
-                Expanded(
-                    child: getDecoratedBox(
-                        "领家庭积分", "油醋纸巾兑不停", AppDataUtils.choujiang2)),
-              ],
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.all(8),
-            child: getTextTitle("抗击新冠肺炎"),
-          ),
-          Container(
-            padding: EdgeInsets.only(left: 8, right: 8),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                    child:
-                        getDecoratedBox("实时数据", "疫情动态追踪", AppDataUtils.ditu)),
-                Expanded(
-                    child:
-                        getDecoratedBox("滚动资讯", "实时权威发布", AppDataUtils.xinwen)),
-              ],
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.only(left: 8, right: 8),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                    child: getDecoratedBox(
-                        "宅家也能买菜", "新鲜蔬菜送上门", AppDataUtils.shucai)),
-                Expanded(
-                    child: getDecoratedBox(
-                        "消毒清洁用品", "除菌消毒更健康", AppDataUtils.yiyonxiang)),
-              ],
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.all(16),
-            width: size.width,
-            child: Center(
-              child: Text("-------------------- 我是有底线的 --------------------",
-                  style: TextStyle(fontSize: 10)),
-            ),
-          ),
-        ],
-      ),
+        )),
+      ],
     );
   }
 
@@ -164,7 +170,8 @@ class MainHomeState extends State<MainHome> {
   Widget getGridView() {
     return GridView.builder(
       physics: new NeverScrollableScrollPhysics(),
-      shrinkWrap: true, // 使用item的总高度来设置 GridView 的高度
+      shrinkWrap: true,
+      // 使用item的总高度来设置 GridView 的高度
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 4, // 每行四列
         childAspectRatio: 1, // 显示区域宽高比相等
@@ -204,11 +211,9 @@ class MainHomeState extends State<MainHome> {
       itemWidth: width,
       itemHeight: height,
       autoplay: true,
-      layout: SwiperLayout.DEFAULT,
       pagination: new SwiperPagination(),
-      control: new SwiperControl(),
       itemBuilder: (BuildContext context, int index) {
-        return Image.asset(swipers[index].url, fit: BoxFit.cover);
+        return Image.asset(swipers[index].url, fit: BoxFit.fill);
       },
     );
   }
