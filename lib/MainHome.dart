@@ -1,6 +1,7 @@
 // 首页
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:zhifubao/utils/AppDataUtils.dart';
 
@@ -69,10 +70,10 @@ class MainHomeState extends State<MainHome> {
                   children: <Widget>[
                     Expanded(
                         child: getDecoratedBox(
-                            "天天抽奖", "今日限量免费抽", AppDataUtils.choujiang)),
+                            "天天抽奖", "今日限量免费抽", AppDataUtils.svg_choujiang)),
                     Expanded(
                         child: getDecoratedBox(
-                            "领家庭积分", "油醋纸巾兑不停", AppDataUtils.choujiang2)),
+                            "领家庭积分", "油醋纸巾兑不停", AppDataUtils.svg_duihuan)),
                   ],
                 ),
               ),
@@ -86,10 +87,10 @@ class MainHomeState extends State<MainHome> {
                   children: <Widget>[
                     Expanded(
                         child: getDecoratedBox(
-                            "实时数据", "疫情动态追踪", AppDataUtils.ditu)),
+                            "实时数据", "疫情动态追踪", AppDataUtils.svg_ditu)),
                     Expanded(
                         child: getDecoratedBox(
-                            "滚动资讯", "实时权威发布", AppDataUtils.xinwen)),
+                            "滚动资讯", "实时权威发布", AppDataUtils.svg_xinwen)),
                   ],
                 ),
               ),
@@ -99,10 +100,10 @@ class MainHomeState extends State<MainHome> {
                   children: <Widget>[
                     Expanded(
                         child: getDecoratedBox(
-                            "宅家也能买菜", "新鲜蔬菜送上门", AppDataUtils.shucai)),
+                            "宅家也能买菜", "新鲜蔬菜送上门", AppDataUtils.svg_shucai)),
                     Expanded(
                         child: getDecoratedBox(
-                            "消毒清洁用品", "除菌消毒更健康", AppDataUtils.yiyonxiang)),
+                            "消毒清洁用品", "除菌消毒更健康", AppDataUtils.svg_jiankang)),
                   ],
                 ),
               ),
@@ -242,7 +243,8 @@ class MainHomeState extends State<MainHome> {
                 ],
               ),
             ),
-            Image.asset(asset)
+//            Image.asset(asset)
+            SvgPicture.asset(asset, height: 45),
           ],
         ),
       ),

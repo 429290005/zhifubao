@@ -1,6 +1,8 @@
 // 朋友
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:zhifubao/FriendInfo.dart';
 import 'package:zhifubao/entity/Friend.dart';
 import 'package:zhifubao/utils/AppDataUtils.dart';
 
@@ -107,25 +109,37 @@ class MainFriendState extends State<MainFriend> {
   }
 
   // -------------------- ListView的Item --------------------
-  Row getItem(Friend friend) {
-    return new Row(
-      children: <Widget>[
-        Expanded(child: Image.asset(friend.assets, fit: BoxFit.cover)),
-        Expanded(
-          flex: 5,
-          child: Container(
-            margin: EdgeInsets.only(left: 8),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(friend.title, style: TextStyle(fontSize: 16)),
-                Text(friend.info, style: TextStyle(fontSize: 12)),
-              ],
+  GestureDetector getItem(Friend friend) {
+    print(friend.assets);
+    return new GestureDetector(
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: SvgPicture.asset(friend.assets, height: 40),
+          ),
+          Expanded(
+            flex: 5,
+            child: Container(
+              margin: EdgeInsets.only(left: 8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(friend.title, style: TextStyle(fontSize: 16)),
+                  Text(friend.info, style: TextStyle(fontSize: 12)),
+                ],
+              ),
             ),
           ),
-        ),
-        Expanded(child: Text(friend.time)),
-      ],
+          Expanded(child: Text(friend.time)),
+        ],
+      ),
+      onTap: () => tap(friend),
     );
+  }
+
+  void tap(Friend friend) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return FriendInfo(text: friend.title);
+    }));
   }
 }

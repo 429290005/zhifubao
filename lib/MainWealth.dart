@@ -56,73 +56,13 @@ class MainWealthState extends State<MainWealth> {
                   getZx(),
                   getRowGengDuo("财富直通车", "更多"),
                   Container(
-                    margin: EdgeInsets.only(top: 8, bottom: 8),
                     width: size.width,
                     height: 140,
                     child: getSwiper(size.width, 140),
                   ),
                   getRowGengDuo("稳健理财", "更多"),
-                  Text("bar1"),
-                  Text("bar1"),
-                  Text("bar1"),
-                  Text("bar1"),
-                  Text("bar2"),
-                  Text("bar2"),
-                  Text("bar2"),
-                  Text("bar2"),
-                  Text("bar2"),
-                  Text("bar2"),
-                  Text("bar2"),
-                  Text("bar2"),
-                  Text("bar2"),
-                  Text("bar2"),
-                  Text("bar2"),
-                  Text("bar2"),
-                  Text("bar2"),
-                  Text("bar3"),
-                  Text("bar3"),
-                  Text("bar3"),
-                  Text("bar3"),
-                  Text("bar3"),
-                  Text("bar3"),
-                  Text("bar3"),
-                  Text("bar3"),
-                  Text("bar3"),
-                  Text("bar3"),
-                  Text("bar3"),
-                  Text("bar3"),
-                  Text("bar3"),
-                  Text("bar3"),
-                  Text("bar3"),
-                  Text("bar3"),
-                  Text("bar3"),
-                  Text("bar3"),
-                  Text("bar3"),
-                  Text("bar3"),
-                  Text("bar4"),
-                  Text("bar4"),
-                  Text("bar4"),
-                  Text("bar4"),
-                  Text("bar4"),
-                  Text("bar4"),
-                  Text("bar4"),
-                  Text("bar4"),
-                  Text("bar4"),
-                  Text("bar4"),
-                  Text("bar4"),
-                  Text("bar4"),
-                  Text("bar4"),
-                  Text("bar4"),
-                  Text("bar4"),
-                  Text("bar4"),
-                  Text("bar4"),
-                  Text("bar4"),
-                  Text("bar4"),
-                  Text("bar5"),
-                  Text("bar5"),
-                  Text("bar5"),
-                  Text("bar5"),
-                  Text("bar5"),
+                  getWjlc(),
+                  getRowGengDuo("投资精选", "更多"),
                 ],
               ),
             ),
@@ -296,13 +236,14 @@ class MainWealthState extends State<MainWealth> {
 
   Container getRowGengDuo(String title, String label) {
     return new Container(
-      padding: EdgeInsets.only(left: 20, right: 20, top: 8),
+      padding: EdgeInsets.only(left: 20, right: 20, top: 16, bottom: 8),
       child: Row(
         children: <Widget>[
           Expanded(
-            child: Text(title, style: TextStyle(color: Colors.black)),
+            child: Text(title,
+                style: TextStyle(color: Colors.black, fontSize: 17)),
           ),
-          Text(label, style: TextStyle(fontSize: 10)),
+          Text(label, style: TextStyle(fontSize: 14)),
         ],
       ),
     );
@@ -320,6 +261,49 @@ class MainWealthState extends State<MainWealth> {
       itemBuilder: (BuildContext context, int index) {
         return Image.asset(swipers[index].url, fit: BoxFit.fill);
       },
+    );
+  }
+
+  // -------------------- 稳健理财推荐 --------------------
+  Column getColumn(String str1, String str2, String str3, String str4) {
+    return new Column(
+      children: <Widget>[
+        Text(str1, style: TextStyle(fontSize: 16)),
+        Text(str2, style: TextStyle(fontSize: 16, color: Colors.red)),
+        Text(str3, style: TextStyle(fontSize: 10, color: Colors.black54)),
+        Text(str4, style: TextStyle(fontSize: 12)),
+      ],
+    );
+  }
+
+  Widget getWjlc() {
+    return new Padding(
+      padding: EdgeInsets.only(left: 20, right: 20),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+            border: Border.all(color: Color.fromARGB(255, 228, 228, 228))),
+        child: Padding(
+          padding: EdgeInsets.only(top: 8, right: 8, bottom: 8),
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                flex: 1,
+                child: getColumn("季度理财", "4.00%", "业绩基准(年化)", "财通财慧2号"),
+              ),
+              Container(color: Colors.black12, width: 1, height: 50),
+              Expanded(
+                flex: 1,
+                child: getColumn("半年理财", "3.30%", "业绩基准(年化)", "广发多添利"),
+              ),
+              Container(color: Colors.black12, width: 1, height: 50),
+              Expanded(
+                flex: 1,
+                child: getColumn("年度理财", "4.1060%", "业绩基准(年化)", "国寿安鑫盈"),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 

@@ -14,7 +14,7 @@ class MainFoodState extends State<MainFood> {
     return new MaterialApp(
       routes: {
         "/": (_) => new WebviewScaffold(
-              url: "https://hz.meituan.com/",
+              url: "https://i.meituan.com/",
             ),
       },
     );
